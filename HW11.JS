@@ -1,26 +1,14 @@
-// BasicCard constructor - Accepts front and back arguments
+// BasicCard constructor
 function BasicCard(arg1, arg2) {
-// These  Properties contain the front and back arguments
 this.front = arg1;
 this.back = arg2;
 }
-
 // BasicCard Constructor -- Continues
 var firstPresident = new BasicCard( "Who was the first president of the United States?", "George Washington");
-
-// "Who was the first president of the United States?"
   console.log(firstPresident.front);
-
-// "George Washington"
   console.log(firstPresident.back);
-
-//ClozeCard Constructor - Accepts fullText and cloze arguments
+//ClozeCard Constructor -
 function ClozeCard(fullText, cloze) {
-// Log an error when the cloze deletion does not appear in the input text
-	if (fullText.search(cloze) === -1) {
-		console.log("This doesn't work", "oops")
-		return;
-	}
 // Property that contains only the cloze, the partial, or the full text.
 	this.fullText = fullText;
 	this.cloze = cloze;
@@ -28,4 +16,10 @@ function ClozeCard(fullText, cloze) {
 }
 // ClonzeCard constructor -- Continues
 var firstPresidentCloze = new ClozeCard("George Washington was the first president of the United States.", "George Washington");
+console.log(firstPresidentCloze.cloze);
+console.log(firstPresidentCloze.partial);
 console.log(firstPresidentCloze.fullText);
+
+//variable brokenCloze throws this console.log
+var brokenCloze = new ClozeCard("This doesn't work, oops");
+console.log(brokenCloze.fullText);
